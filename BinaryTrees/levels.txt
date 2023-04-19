@@ -1,0 +1,26 @@
+void isBalanced()
+{
+       int levelL = 0,
+           levelR=0;
+       if (root) 
+       {
+           levelL = findLevel(root->left, 0);
+               //findLevel(root->left);
+           levelR = findLevel(root->right,0);
+       }
+       cout << "\n\nThe left level is " << levelL <<
+           "\nThe right level is " << levelR << endl;     
+}
+
+int IntBinaryTree::findLevel(TreeNode*& tree, int level)
+{
+    if (tree)
+    {
+        int left, right;
+        right = findLevel(tree->right,level)+1;
+        left = findLevel(tree->left,level)+1;
+        if (left > right)  level += left;
+        else level += right;
+    }
+    return level;
+}
