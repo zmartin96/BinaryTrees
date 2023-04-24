@@ -98,34 +98,34 @@ void IntBinaryTree::makeDeletion(TreeNode *&tree)
    // left subtree is attached.
    TreeNode *attachPoint;
 
-   if (tree->right == nullptr)
+   if (tree->left == nullptr)
    {
       // Replace tree with its left subtree. 
-      tree = tree->left;
+      tree = tree->right;
    }
-   else if (tree->left == nullptr)
+   else if (tree->right == nullptr)
    {
       // Replace tree with its right subtree.
-      tree = tree->right;
+      tree = tree->left;
    }
    else
       //The node has two children
    {
       // Move to right subtree.
-      attachPoint = tree->right;
+      attachPoint = tree->left;
 
       // Locate the smallest node in the right subtree
       // by moving as far to the left as possible.
-      while (attachPoint->left != nullptr)
-         attachPoint = attachPoint->left;
+      while (attachPoint->right != nullptr)
+         attachPoint = attachPoint->right;
 
       // Attach the left subtree of the original tree
       // as the left subtree of the smallest node 
       // in the right subtree.
-      attachPoint->left = tree->left;
+      attachPoint->right = tree->right;
 
       // Replace the original tree with its right subtree.
-      tree = tree->right;
+      tree = tree->left;
    }
 
    // Delete root of original tree
