@@ -146,42 +146,39 @@ int IntBinaryTree::findLevel(TreeNode*& tree, int level)
     return level;
 }
 
-//*********************************************************
-// This function displays the values  stored in a tree    *  
-// in inorder.                                            *
-//*********************************************************
+
 void IntBinaryTree::displayInOrder(TreeNode *tree) const
 {
    if (tree)
    {
+       //InOrder
+       //Left side->Root->Right side
       displayInOrder(tree->left);
       cout << tree->value << "  ";
       displayInOrder(tree->right);
    }
 }
 
-//*********************************************************
-// This function displays the values stored in a tree     *
-// in inorder.                                            *
-//*********************************************************
+
 void IntBinaryTree::displayPreOrder(TreeNode *tree) const
 {
    if (tree)
    {
+       //PreOrder
+       //Root->Left side->Right side
       cout << tree->value << "  ";
       displayPreOrder(tree->left);
       displayPreOrder(tree->right);
    }
 }
 
-//*********************************************************
-// This function displays the values  stored  in a tree   *
-// in postorder.                                          * 
-//*********************************************************
+
 void IntBinaryTree::displayPostOrder(TreeNode *tree) const
 {
    if (tree)
    {
+       //PostOrder
+       //Left side->Right side->Root
       displayPostOrder(tree->left);
       displayPostOrder(tree->right);
       cout << tree->value << "  ";
