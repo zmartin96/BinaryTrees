@@ -8,11 +8,17 @@ int main()
 {
 	IntBinaryTree tree;
 	cout << "Inserting the numbers 5 8 3 12 9.\n\n";
-	tree.insert(5);
-	tree.insert(8);
-	tree.insert(3);
 	tree.insert(12);
+	tree.insert(7);
 	tree.insert(9);
+	tree.insert(10);
+	tree.insert(22);
+	tree.insert(24);
+	tree.insert(30);
+	tree.insert(18);
+	tree.insert(3);
+	tree.insert(14);
+	tree.insert(20);
 
 	cout << "Inorder traversal:  ";
 	tree.showInOrder();
@@ -33,10 +39,10 @@ int main()
 	else
 		cout << "3 was not found in the tree.\n";
 	cout << "\nDeleting 8...\n";
-	tree.remove(8);
+	tree.remove(9);
 
 	cout << "Deleting 12...\n";
-	tree.remove(12);
+	tree.remove(18);
 
 	cout << "Now, here are the nodes:\n";
 	tree.showInOrder();
